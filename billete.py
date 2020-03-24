@@ -24,6 +24,17 @@ def setCharge(ma):
 def getOption():
 	return input("Seleccione un tipo de usuario: ")
 	pass
+def getDestiny():
+	print('')
+	print('\tP - PUNTA')
+	print('\tV - VALLE')
+	print('\tB - BAJO')
+	dst = input('\nIndique el destino: ')
+	while not dst in to_place:
+		dst = input('Indique el destino: ')
+	pass
+	return dst
+	pass
 def clear():
 	os.system ("cls")
 	os.system ("clear")
@@ -44,8 +55,15 @@ while not opc in typeUser:
 	pass
 
 act_credit = setSaldo()
-print('Saldo Actual: ' ,act_credit)
+
+selec_dest = getDestiny()
+clear()
+print('\n\n------------------------------')
+print('\n\nSaldo Actual \t:' ,act_credit)
+print('Tipo de Usuario :',typeUser[opc])
+print('Destino \t:', to_place[selec_dest] )
+
+print('\n\n------------------------------')
 
 
-
-print( "BY")
+print( "")
