@@ -26,14 +26,21 @@ def getOption():
 	pass
 def getDestiny():
 	print('')
-	print('\tP - PUNTA')
-	print('\tV - VALLE')
-	print('\tB - BAJO')
+	 
+	print('')
+	for x in to_place:
+		print('\t',x,'-',to_place[x])
+		pass
+	print ()
 	dst = input('\nIndique el destino: ')
 	while not dst in to_place:
 		dst = input('Indique el destino: ')
 	pass
 	return dst
+	pass
+def getTableOptions():
+	print(act_credit,
+selec_dest)
 	pass
 def clear():
 	os.system ("cls")
@@ -64,6 +71,7 @@ print('Tipo de Usuario :',typeUser[opc])
 print('Destino \t:', to_place[selec_dest] )
 
 print('\n\n------------------------------')
+getTableOptions()
 
 
 print( "")
