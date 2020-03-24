@@ -5,6 +5,7 @@ to_place = {'P':'PUNTA', 'B':'BAJO', 'V':'VALLE'}
 act_credit = 0
 
 
+
 def menu():
 	print('Sistema de tickets')
 	print('')
@@ -23,6 +24,16 @@ def setCharge(ma):
 	pass
 def getOption():
 	return input("Seleccione un tipo de usuario: ")
+	pass
+def setAskforCharge():
+	ask =  input('Desea abonar a su saldo (S/N)?')
+
+	while not ask in ['S','N','n','s']:
+		ask =  input('Desea abonar a su saldo (S/N)?')
+		pass
+
+	return ask
+
 	pass
 def getDestiny():
 	print('')
