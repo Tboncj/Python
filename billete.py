@@ -25,7 +25,7 @@ def setCharge(ma):
 def getOption():
 	return input("Seleccione un tipo de usuario: ")
 	pass
-def setAskforCharge():
+def getAskforCharge():
 	ask =  input('Desea abonar a su saldo (S/N)?')
 
 	while not ask in ['S','N','n','s']:
@@ -50,8 +50,23 @@ def getDestiny():
 	return dst
 	pass
 def getTableOptions():
-	print(act_credit,
-selec_dest)
+
+  	#  				   Punta(P) 	Valle(V) 	Bajo(B) 
+	# Adulto 		(A) 	740 		660 	610 
+	# Estudiante    (E) 	210 		210 	210 
+	# Adulto Mayor  (M) 	210 		210 	210 
+	 
+
+	table = {
+				'AP':740, 'AV':660, 'AB':610,
+				'EP':210, 'EV':210, 'EB':210,
+				'MP':210, 'MV':210, 'MB':210
+			}
+
+	mopt = opc + selec_dest 
+
+	return table[ mopt ]
+
 	pass
 def clear():
 	os.system ("cls")
@@ -62,6 +77,9 @@ def clear():
 	elif os.name == "ce" or os.name == "nt" or os.name == "dos":
 	   os.system ("cls")
 	pass
+
+#prueba de escritorio
+clear()
 
 menu()
 opc = getOption()
@@ -76,13 +94,17 @@ act_credit = setSaldo()
 
 selec_dest = getDestiny()
 clear()
+cost = getTableOptions()
+clear()
+
 print('\n\n------------------------------')
 print('\n\nSaldo Actual \t:' ,act_credit)
 print('Tipo de Usuario :',typeUser[opc])
 print('Destino \t:', to_place[selec_dest] )
+print('Costo   \t:', cost)
 
 print('\n\n------------------------------')
-getTableOptions()
 
+gask = getAskforCharge()
 
 print( "")
