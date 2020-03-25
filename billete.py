@@ -50,12 +50,10 @@ def getDestiny():
 	return dst
 	pass
 def getTableOptions():
-
   	#  				   Punta(P) 	Valle(V) 	Bajo(B) 
 	# Adulto 		(A) 	740 		660 	610 
 	# Estudiante    (E) 	210 		210 	210 
-	# Adulto Mayor  (M) 	210 		210 	210 
-	 
+	# Adulto Mayor  (M) 	210 		210 	210
 
 	table = {
 				'AP':740, 'AV':660, 'AB':610,
@@ -88,6 +86,10 @@ def getResume():
 
 	print('\n\n------------------------------')
 	pass
+
+
+
+
 #prueba de escritorio
 clear()
 
@@ -113,13 +115,11 @@ if float(act_credit) < float(cost):
 	gask = getAskforCharge()
 	if  gask.upper()=="S":
 		act_credit = setCharge(act_credit)
-		# if float(nw_saldo)>0:
-		# 	act_credit = float(act_credit) + float(nw_saldo)
 		getResume()
-		# pass
 	else:
 		print('\nTu saldo ha sido retenido')
 		print('saldo Final : 0.0')
 	pass
+
 print( "")
 
