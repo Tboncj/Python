@@ -18,18 +18,18 @@ def setSaldo():
 	return input("Digite el monto actual del boleto: ")
 	pass
 def setCharge(ma):
-	nwm = cfloat( input('Ingrese el monto: ') )
-	nwm = nwm + ma
+	nwm = float( input('\nIngrese el monto: ') )
+	nwm = nwm + float(ma)
 	return nwm
 	pass
 def getOption():
 	return input("Seleccione un tipo de usuario: ")
 	pass
 def getAskforCharge():
-	ask =  input('Desea abonar a su saldo (S/N)?')
+	ask =  input('\nDesea abonar a su saldo (S/N)? ')
 
 	while not ask in ['S','N','n','s']:
-		ask =  input('Desea abonar a su saldo (S/N)?')
+		ask =  input('Desea abonar a su saldo (S/N)? ')
 		pass
 
 	return ask
@@ -77,7 +77,17 @@ def clear():
 	elif os.name == "ce" or os.name == "nt" or os.name == "dos":
 	   os.system ("cls")
 	pass
+def getResume():
+	clear()
 
+	print('\n\n------------------------------')
+	print('\n\nSaldo Actual \t:' ,act_credit)
+	print('Tipo de Usuario :',typeUser[opc])
+	print('Destino \t:', to_place[selec_dest] )
+	print('Costo   \t:', cost)
+
+	print('\n\n------------------------------')
+	pass
 #prueba de escritorio
 clear()
 
@@ -95,16 +105,21 @@ act_credit = setSaldo()
 selec_dest = getDestiny()
 clear()
 cost = getTableOptions()
-clear()
 
-print('\n\n------------------------------')
-print('\n\nSaldo Actual \t:' ,act_credit)
-print('Tipo de Usuario :',typeUser[opc])
-print('Destino \t:', to_place[selec_dest] )
-print('Costo   \t:', cost)
+getResume()
 
-print('\n\n------------------------------')
 
-gask = getAskforCharge()
-
+if float(act_credit) < float(cost):
+	gask = getAskforCharge()
+	if  gask.upper()=="S":
+		act_credit = setCharge(act_credit)
+		# if float(nw_saldo)>0:
+		# 	act_credit = float(act_credit) + float(nw_saldo)
+		getResume()
+		# pass
+	else:
+		print('\nTu saldo ha sido retenido')
+		print('saldo Final : 0.0')
+	pass
 print( "")
+
