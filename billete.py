@@ -75,7 +75,8 @@ def clear():
 	elif os.name == "ce" or os.name == "nt" or os.name == "dos":
 	   os.system ("cls")
 	pass
-def getResume():
+def getResume(act):
+	act_credit =act
 	clear()
 
 	print('\n\n------------------------------')
@@ -85,6 +86,20 @@ def getResume():
 	print('Costo   \t:', cost)
 
 	print('\n\n------------------------------')
+	if float(act_credit) < float(cost):
+		validatemontos(act_credit)
+		pass
+	pass
+def validatemontos(act_credit):
+	
+	gask = getAskforCharge()
+	if  gask.upper()=="S":
+		act_credit = setCharge(act_credit)
+		getResume(act_credit)
+	else:
+		print('\nTu saldo ha sido retenido')
+		print('saldo Final : 0.0')
+		
 	pass
 
 
@@ -108,18 +123,9 @@ selec_dest = getDestiny()
 clear()
 cost = getTableOptions()
 
-getResume()
+getResume(act_credit)
 
-
-if float(act_credit) < float(cost):
-	gask = getAskforCharge()
-	if  gask.upper()=="S":
-		act_credit = setCharge(act_credit)
-		getResume()
-	else:
-		print('\nTu saldo ha sido retenido')
-		print('saldo Final : 0.0')
-	pass
+# validatemontos(act_credit,cost)
 
 print( "")
 
