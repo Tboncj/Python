@@ -82,15 +82,21 @@ def getResume(act):
 	print('\n\n------------------------------')
 	print('\n\nSaldo Actual \t:' ,act_credit)
 	print('Tipo de Usuario :',typeUser[opc])
+	print('Creditos \t:')
 	print('Destino \t:', to_place[selec_dest] )
 	print('Costo   \t:', cost)
+
 	if float(act_credit)>float(cost):
 		saldo_final = float(act_credit)-float(cost)
 		print("\nSaldo Final \t: ", saldo_final )
 		pass
 
 	print('\n\n------------------------------')
+
 	if float(act_credit) < float(cost):
+		saldo_final = float(cost)-float(act_credit)
+		print("\nNo cuentas con saldo suficiente para viajar")
+		print('Te sugerimos abonar :', saldo_final)
 		validatemontos(act_credit)
 		pass
 	pass
