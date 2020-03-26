@@ -84,6 +84,10 @@ def getResume(act):
 	print('Tipo de Usuario :',typeUser[opc])
 	print('Destino \t:', to_place[selec_dest] )
 	print('Costo   \t:', cost)
+	if float(act_credit)>float(cost):
+		saldo_final = float(act_credit)-float(cost)
+		print("\nSaldo Final \t: ", saldo_final )
+		pass
 
 	print('\n\n------------------------------')
 	if float(act_credit) < float(cost):
