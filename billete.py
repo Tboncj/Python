@@ -1,4 +1,10 @@
 import os
+"""
+
+	DESAFIO  
+	El valor de la tarifa del Metro de Pythonia depende del tipo de pasajero y horario del viaje. 
+	La siguiente tabla muestra el detalle: 
+"""
 
 typeUser = {'A':'ADULTO', 'E':'ESTUDIANTE', 'M':'MAYOR'}
 to_place = {'P':'PUNTA', 'B':'BAJO', 'V':'VALLE'}
@@ -115,12 +121,13 @@ def validatemontos(act_credit):
 
 
 
-#prueba de escritorio
+## prueba de escritorio ##
 clear()
-
+#Cargar Menu y esperar al usuario elegir una opcion
 menu()
 opc = getOption()
 
+#mientras la opcion no sea correcta
 while not opc in typeUser:
 	clear()
 	menu() 
@@ -135,7 +142,6 @@ cost = getTableOptions()
 
 getResume(act_credit)
 
-# validatemontos(act_credit,cost)
 
 print( "")
 
