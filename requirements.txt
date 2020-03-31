@@ -2,3 +2,4 @@ get==2019.4.13
 query-string==2019.4.13
 requests==2.23.0
 virtualenv==16.7.7
+pytest==5.4.1
